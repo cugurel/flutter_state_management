@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -7,6 +6,10 @@ import 'flutter_provider.dart';
 void main() {
   runApp(MyApp());
 }
+
+final numberProvider = StateProvider<int>((ref){
+  return 42;
+});
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -49,6 +52,22 @@ class MyHomePage extends StatelessWidget {
             SizedBox(
               height: 5,
             ),
+            SizedBox(
+              width: 200,
+              height: 40,
+              child: RaisedButton(
+                  child: Text("State Provider"),
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FlutterProvider()));
+                  }),
+            ),
+
+            SizedBox(
+              height: 5,
+            ),
+
+
+            //smartgit yorumu
             SizedBox(
               width: 200,
               height: 40,
