@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+//smartgit trial
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
