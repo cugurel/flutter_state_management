@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'flutter_provider.dart';
+import 'flutter_state_provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 final numberProvider = StateProvider<int>((ref){
@@ -27,7 +28,6 @@ class MyApp extends StatelessWidget {
 //smartgit trial
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,10 +45,9 @@ class MyHomePage extends StatelessWidget {
               child: RaisedButton(
                 child: Text("Provider"),
                   onPressed: (){
-                   // Navigator.of(context).push(MaterialPageRoute(builder: (context) => FlutterStateProvider()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FlutterProvider()));
               }),
             ),
-
             SizedBox(
               height: 5,
             ),
@@ -58,14 +57,12 @@ class MyHomePage extends StatelessWidget {
               child: RaisedButton(
                   child: Text("State Provider"),
                   onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FlutterProvider()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FlutterStateProvider()));
                   }),
             ),
-
             SizedBox(
               height: 5,
             ),
-
 
             //smartgit yorumu
             SizedBox(
@@ -74,7 +71,7 @@ class MyHomePage extends StatelessWidget {
               child: RaisedButton(
                   child: Text("State Provider"),
                   onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FlutterProvider()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FlutterStateProvider()));
                   }),
             ),
           ],
