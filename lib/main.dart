@@ -15,6 +15,8 @@ class IncrementNotifier extends ChangeNotifier{
 
 final greetingProvider = Provider((ref) => 'Hello Riverpod');
 
+final incrementProvider = ChangeNotifierProvider((ref)=>IncrementNotifier());
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -29,10 +31,17 @@ class MyApp extends StatelessWidget {
           body: Center(
             child: Consumer(
               builder: (context, watch, child) {
-                final greeting = watch(greetingProvider);
-                return Text(greeting);
+                final incrementNotifier = watch(incrementProvider);
+                return Text(incrementNotifier.value.toString());
               },
             ),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: (){
+              context.read(incrementProvider).increment();
+
+            },
+            child: Icon(Icons.add),
           ),
         ));
   }
