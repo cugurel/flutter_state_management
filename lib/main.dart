@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
               context.read(incrementProvider).increment();
             },
             child: Icon(Icons.add),
-            
+
           ),
         ));
   }
