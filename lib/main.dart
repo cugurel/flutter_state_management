@@ -8,7 +8,7 @@ class IncrementNotifier extends ChangeNotifier{
   int get value => _value;
 
   void increment(){
-    _value += 1;
+    _value++;
     notifyListeners();
   }
 }
@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
             onPressed: (){
               context.read(incrementProvider).increment();
-
             },
             child: Icon(Icons.add),
+            
           ),
         ));
   }
